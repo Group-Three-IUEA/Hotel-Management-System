@@ -20,11 +20,11 @@ public class hotelReservationSystem extends JFrame {
         setVisible(true);
     }
 
-    private JPanel createFormPanel(String[] labels) {
+    public JPanel createFormPanel(String[] labels) {
         return createFormPanel("Guest Information", labels, new String[labels.length]);
     }
 
-    private JPanel createFormPanel(String title, String[] labels, String[] defaults) {
+    public JPanel createFormPanel(String title, String[] labels, String[] defaults) {
         JPanel panel = new JPanel(new GridLayout(labels.length, 2, 5, 5));
         panel.setBorder(BorderFactory.createTitledBorder(title));
         for (int i = 0; i < labels.length; i++) {
@@ -33,7 +33,7 @@ public class hotelReservationSystem extends JFrame {
         }
         return panel;
     }
-    private JPanel createRoomSelectionPanel() {
+    public JPanel createRoomSelectionPanel() {
         JPanel panel = new JPanel(new GridLayout(2, 2, 5, 5));
         panel.setBorder(BorderFactory.createTitledBorder("Room Selection"));
         panel.add(new JLabel("Room Type:"));
@@ -44,7 +44,7 @@ public class hotelReservationSystem extends JFrame {
     }
 
 
-    private JPanel createSummaryPanel() {
+    public JPanel createSummaryPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder("Reservation Summary"));
         JTextArea summaryArea = new JTextArea("Reservation details will appear here...");
@@ -54,7 +54,7 @@ public class hotelReservationSystem extends JFrame {
     }
 
 
-    private JPanel createActionPanel() {
+    public JPanel createActionPanel() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         panel.setBorder(BorderFactory.createTitledBorder("Actions"));
         panel.add(new JButton("Confirm Reservation"));
